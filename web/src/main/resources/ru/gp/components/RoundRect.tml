@@ -1,0 +1,14 @@
+<t:content xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
+        
+    <div id="${name}">
+        <t:loop source="1..4" value="indx">
+         <span class="s${indx}" style="background-color:${color}"/>
+        </t:loop>
+        <div id="${name}_content" style="border:1px solid ${color};background-color:${color};">
+            <t:body/>
+        </div>
+        <t:loop source="4..1" value="indx">
+         <span class="s${indx}" style="background-color:${color}"/>
+        </t:loop>
+    </div>
+</t:content>

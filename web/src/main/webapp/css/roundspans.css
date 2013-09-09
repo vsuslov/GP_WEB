@@ -1,0 +1,19 @@
+.s1,.s2,.s3,.s4 {
+    display:block;
+    height:1px;
+    overflow:hidden;
+}
+
+.s1 {
+    margin:0 5px;
+}
+.s2 {
+    margin:0 3px;
+}
+.s3 {
+    margin:0 2px;
+}
+.s4 {
+    margin:0 1px;
+    height:2px;
+}

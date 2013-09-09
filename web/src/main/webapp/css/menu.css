@@ -1,0 +1,17 @@
+#leftMenu {
+    margin:10px 0 10px 15px;
+    width:150px;
+    height:250px;
+    float:left;
+}
+#leftMenu_content a {
+    margin-left:15px;
+    border:1px solid black;
+    margin-bottom:15px;
+}
+#leftMenu_content br{
+    height:15px;
+}
+#leftMenu_header {
+    color:white;
+}

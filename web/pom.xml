@@ -1,0 +1,60 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>ru.gp</groupId>
+    <artifactId>web</artifactId>
+    <version>1.0</version>
+    <packaging>war</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.tapestry</groupId>
+            <artifactId>tapestry-core</artifactId>
+            <version>${tapestry.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tapestry</groupId>
+            <artifactId>tapestry-upload</artifactId>
+            <version>${tapestry.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>${build.name}</finalName>
+    </build>
+    <profiles>
+        <profile>
+            <id>stage</id>
+
+            <properties>
+                <build.name>stage</build.name>
+            </properties>
+
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-war-plugin</artifactId>
+                        <configuration>
+                            <outputDirectory>d:\RS_WORK\Tools\Tomcat8\webapps\</outputDirectory>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>developer</id>
+            <properties>
+                <build.name>web</build.name>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+    </profiles>
+
+    <properties>
+        <tapestry.version>5.3.7</tapestry.version>
+        <build.name>gp</build.name>
+    </properties>
+</project>

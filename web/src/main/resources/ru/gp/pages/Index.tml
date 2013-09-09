@@ -1,0 +1,14 @@
+<html t:type="startLayout" title="lololo" 
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
+
+    <center><em>Construction...</em></center>
+    <br/>
+        <div id="blockChoose" style="position:absolute; width:99%;height:61%">
+        <div style="width:49.8%;height:60%;background-color:green;color:gray;float:left">
+            <div style="display:inline-block;margin:auto;position:absolute;border:1px solid black;"><t:pageLink page="Geodesy">Геодезия</t:pageLink></div>
+        </div>
+        <div style="width:49.7%;height:60%;background-color:red;color:gray;float:right;">
+            <center><t:pageLink page="Index">Кадастр</t:pageLink></center>
+        </div>
+    </div>
+</html>

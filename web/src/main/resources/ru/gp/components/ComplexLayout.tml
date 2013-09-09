@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" xmlns:p="tapestry:parameter">
+    <head>
+      <title>${title}</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="header"><center><h1>Геодезюкия</h1></center></div>
+            <div t:type="roundRect" name="delimiter" color="black"/>
+                <div t:type="menu" name="leftMenu"/>
+                <div id="content">
+                    <t:delegate to="content"/>
+                </div>
+        </div>
+        <div t:type="roundRect" color="#569d2f" name="footer">
+            <span class="center">2013г.</span>
+            <span id="copyright">&copy;&nbsp;vsuslov</span><br/>
+            <span>Ver.:${version}</span>
+        </div>
+    </body>
+</html>

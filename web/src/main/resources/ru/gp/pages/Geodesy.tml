@@ -1,0 +1,10 @@
+<html t:type="complexLayout" title="Геодезия"
+       xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+       xmlns:p="tapestry:parameter">
+       
+   <p:content>
+    Геодезюкия - <em>страна, в которой проживают геодезюки.</em>
+   </p:content>
+
+
+</html>

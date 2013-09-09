@@ -1,0 +1,10 @@
+<html t:type="complexLayout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" xmlns:p="tapestry:parameter">
+
+
+<p:content>
+
+    <div id="uploader">
+    <h3>${message:headers.uploadFile}</h3>
+    </div>
+</p:content>
+</html>

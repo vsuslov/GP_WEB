@@ -1,0 +1,10 @@
+<content xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
+    <div id="leftMenu" >
+        <div t:type="roundRect" name="${name}_header" color="#569d2f"><center>${message:tools}</center></div>
+        <div t:type="roundRect" name="${name}_content" color="#ecffe7">
+            <t:loop source="links" value="link">
+                <t:pagelink page="${link}">${linkName}</t:pagelink><br/>
+            </t:loop>
+        </div>
+    </div>
+</content>
