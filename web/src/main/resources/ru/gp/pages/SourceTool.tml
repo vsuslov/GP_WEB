@@ -5,6 +5,14 @@
 
     <div id="uploader">
     <h3>${message:headers.uploadFile}</h3>
+    <hr/>
+
+    <t:form>
+        <input t:type="textField" t:id="name"/><br/>
+        <input t:type="upload" t:id="uploader" t:value="uploader" validate="required"/>
+        <br/>
+        <input type="submit" value="Upload"/>
+    </t:form>
     </div>
 </p:content>
 </html>
