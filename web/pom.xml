@@ -19,10 +19,24 @@
             <artifactId>tapestry-upload</artifactId>
             <version>${tapestry.version}</version>
         </dependency>
+        <dependency>
+            <groupId>ru.gp</groupId>
+            <artifactId>berger</artifactId>
+            <version>1.1</version>
+        </dependency>
     </dependencies>
 
     <build>
         <finalName>${build.name}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <outputDirectory>${out.dir}</outputDirectory>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
     <profiles>
         <profile>
@@ -30,24 +44,15 @@
 
             <properties>
                 <build.name>stage</build.name>
+                <out.dir>d:\RS_WORK\Tools\Tomcat8\webapps</out.dir>
             </properties>
 
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-war-plugin</artifactId>
-                        <configuration>
-                            <outputDirectory>d:\RS_WORK\Tools\Tomcat8\webapps\</outputDirectory>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
         </profile>
         <profile>
             <id>developer</id>
             <properties>
                 <build.name>web</build.name>
+                <out.dir>D:\programming\TOOLS\Tomcat7\webapps</out.dir>
             </properties>
             <activation>
                 <activeByDefault>true</activeByDefault>
@@ -58,5 +63,6 @@
     <properties>
         <tapestry.version>5.3.7</tapestry.version>
         <build.name>gp</build.name>
+        <out.dir>${project.basedir}\target\</out.dir>
     </properties>
 </project>

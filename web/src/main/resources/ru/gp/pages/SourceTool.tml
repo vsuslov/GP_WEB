@@ -8,6 +8,7 @@
     <hr/>
 
     <t:form>
+        <t:label for="name" >${message:enter.project.name}</t:label>
         <input t:type="textField" t:id="name"/><br/>
         <input t:type="upload" t:id="uploader" t:value="uploader" validate="required"/>
         <br/>
