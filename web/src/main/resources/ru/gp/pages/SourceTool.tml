@@ -7,13 +7,23 @@
     <h3>${message:headers.uploadFile}</h3>
     <hr/>
 
-    <t:form>
+    <t:form zone="upldr">
         <t:label for="name" >${message:enter.project.name}</t:label>
         <input t:type="textField" t:id="name"/><br/>
         <input t:type="upload" t:id="uploader" t:value="uploader" validate="required"/>
         <br/>
         <input type="submit" value="Upload"/>
-    </t:form>
+        </t:form>
+
+    <t:zone t:id="upldr">
+    </t:zone>
+
     </div>
+
+    <t:block id="pnts">
+        <t:loop t:id="loop" source="core.points" value="getPoint()">
+            ${point.east}<br/>
+        </t:loop>
+    </t:block>
 </p:content>
 </html>
