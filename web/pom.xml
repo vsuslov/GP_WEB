@@ -45,6 +45,7 @@
 
     <build>
         <finalName>${build.name}</finalName>
+
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -73,6 +74,11 @@
                     <!--</arguments>-->
                 <!--</configuration>-->
             <!--</plugin>-->
+
+            <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+            </plugin>
         </plugins>
     </build>
     <profiles>
