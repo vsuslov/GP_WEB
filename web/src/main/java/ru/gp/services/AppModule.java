@@ -1,7 +1,5 @@
 package ru.gp.services;
 
-import java.io.IOException;
-
 import org.apache.tapestry5.SymbolConstants;
 import org.apache.tapestry5.ioc.MappedConfiguration;
 import org.apache.tapestry5.ioc.OrderedConfiguration;
@@ -12,6 +10,8 @@ import org.apache.tapestry5.services.RequestFilter;
 import org.apache.tapestry5.services.RequestHandler;
 import org.apache.tapestry5.services.Response;
 import org.slf4j.Logger;
+
+import java.io.IOException;
 
 /**
  * This module is automatically included as part of the Tapestry IoC Registry,
@@ -42,7 +42,7 @@ public class AppModule {
 		// QaModule.
 
 		configuration.override(SymbolConstants.APPLICATION_VERSION,
-				"1.0-SNAPSHOT");
+				"1.1-SNAPSHOT");
 	}
 
 	public static void contributeApplicationDefaults(

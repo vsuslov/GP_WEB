@@ -3,8 +3,10 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>ru.gp</groupId>
     <artifactId>web</artifactId>
-    <version>1.0</version>
+    <version>1.1-SNAPSHOT</version>
     <packaging>war</packaging>
+
+    <name>CivilianProject</name>
 
     <dependencies>
         <dependency>
@@ -17,10 +19,67 @@
             <artifactId>tapestry-upload</artifactId>
             <version>${tapestry.version}</version>
         </dependency>
+        <dependency>
+            <groupId>ru.gp</groupId>
+            <artifactId>berger</artifactId>
+            <version>1.1-SNAPSHOT</version>
+        </dependency>
+
+        <!--<dependency>-->
+            <!--<groupId>org.hibernate</groupId>-->
+            <!--<artifactId>hibernate-core</artifactId>-->
+            <!--<version>3.6.0.Final</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.hsqldb</groupId>-->
+            <!--<artifactId>hsqldb</artifactId>-->
+            <!--<version>2.2.4</version>-->
+        <!--</dependency>-->
+        <!--<dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.6.1</version>
+        </dependency>-->
+
     </dependencies>
 
     <build>
         <finalName>${build.name}</finalName>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <outputDirectory>${out.dir}</outputDirectory>
+                </configuration>
+            </plugin>
+
+            <!--<plugin>-->
+                <!--<groupId>org.codehaus.mojo</groupId>-->
+                <!--<artifactId>exec-maven-plugin</artifactId>-->
+                <!--<version>1.2.1</version>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<goals>-->
+                            <!--<goal>java</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+                <!--<configuration>-->
+                    <!--<mainClass>org.hsqldb.server.Server</mainClass>-->
+                    <!--<arguments>-->
+                        <!--<argument>database.0</argument>-->
+                        <!--<argument> file:targer/dbs</argument>-->
+                    <!--</arguments>-->
+                <!--</configuration>-->
+            <!--</plugin>-->
+
+            <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
     </build>
     <profiles>
         <profile>
@@ -28,24 +87,15 @@
 
             <properties>
                 <build.name>stage</build.name>
+                <out.dir>d:\RS_WORK\Tools\Tomcat8\webapps</out.dir>
             </properties>
 
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-war-plugin</artifactId>
-                        <configuration>
-                            <outputDirectory>d:\RS_WORK\Tools\Tomcat8\webapps\</outputDirectory>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
         </profile>
         <profile>
             <id>developer</id>
             <properties>
                 <build.name>web</build.name>
+                <out.dir>D:\programming\TOOLS\Tomcat7\webapps</out.dir>
             </properties>
             <activation>
                 <activeByDefault>true</activeByDefault>
@@ -56,5 +106,6 @@
     <properties>
         <tapestry.version>5.3.7</tapestry.version>
         <build.name>gp</build.name>
+        <out.dir>${project.basedir}\target\</out.dir>
     </properties>
 </project>
